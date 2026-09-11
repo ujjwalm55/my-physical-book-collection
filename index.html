@@ -2,202 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#111827">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#171b35">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>My Book Collection</title>
 <link rel="manifest" href="manifest.json">
 <style>
-:root{
-  --bg:#f4f5f7; --card:rgba(255,255,255,.88); --text:#172033; --muted:#697386;
-  --line:#e4e7ec; --accent:#5b5ce2; --accent2:#7c3aed; --good:#16845b;
-  --shadow:0 12px 35px rgba(17,24,39,.08);
-}
-*{box-sizing:border-box}
-body{
-  margin:0; min-height:100vh; color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;
-  background:
-    radial-gradient(circle at 15% 0%, rgba(124,58,237,.12), transparent 30%),
-    radial-gradient(circle at 90% 8%, rgba(59,130,246,.12), transparent 28%),
-    var(--bg);
-}
-.hero{
-  color:white; background:linear-gradient(135deg,#171b35 0%,#29275f 55%,#4c3ca8 100%);
-  padding:calc(env(safe-area-inset-top) + 28px) 18px 28px;
-  box-shadow:0 8px 30px rgba(23,27,53,.2);
-}
-.hero-inner{max-width:900px;margin:auto}
-.brand{display:flex;align-items:center;gap:12px}
-.bookmark{
-  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
-  background:rgba(255,255,255,.13);font-size:24px;border:1px solid rgba(255,255,255,.15)
-}
-h1{margin:0;font-size:27px;letter-spacing:-.5px}
-.tagline{margin:6px 0 20px;color:rgba(255,255,255,.72);font-size:14px}
-.search-wrap{position:relative}
-.search{
-  width:100%;padding:16px 50px 16px 17px;border:0;border-radius:17px;
-  font-size:17px;outline:none;background:rgba(255,255,255,.98);color:#111827;
-  box-shadow:0 10px 28px rgba(0,0,0,.16)
-}
-.clear{position:absolute;right:10px;top:8px;width:40px;height:40px;border:0;border-radius:12px;background:#eef0f5;color:#555;display:none;font-size:20px}
-.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
-.control{
-  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.1);color:white;
-  border-radius:999px;padding:8px 12px;font-size:13px;cursor:pointer
-}
-.control.active{background:white;color:#28275f}
-.regex-info{margin-top:10px;color:rgba(255,255,255,.66);font-size:12px;display:none}
-main{max-width:900px;margin:auto;padding:16px 15px calc(36px + env(safe-area-inset-bottom))}
-.stats{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:9px 12px;font-size:13px;box-shadow:0 2px 8px rgba(17,24,39,.03)}
-.stat b{font-size:15px;margin-right:3px}
-.list{display:grid;grid-template-columns:1fr;gap:10px}
-.card{
-  position:relative;background:var(--card);backdrop-filter:blur(12px);
-  border:1px solid var(--line);border-radius:17px;padding:16px 17px;
-  box-shadow:var(--shadow);transition:transform .15s ease
-}
-.card:active{transform:scale(.99)}
-.title{font-size:17px;font-weight:700;line-height:1.35;padding-right:30px}
-.author{margin-top:6px;color:var(--muted);font-size:14px}
-.badge{
-  position:absolute;right:13px;top:13px;color:#a0a7b5;font-size:11px;
-  background:#f0f1f4;border-radius:999px;padding:4px 7px
-}
-.empty{text-align:center;padding:55px 20px;color:var(--muted)}
-.empty-icon{font-size:40px;margin-bottom:8px}
-.hint{font-size:13px;line-height:1.5}
-mark{background:#fff0a8;color:inherit;border-radius:4px;padding:0 2px}
-footer{text-align:center;color:#9aa1ad;font-size:12px;padding:20px 5px}
-@media(min-width:680px){.list{grid-template-columns:1fr 1fr}.hero{padding-left:24px;padding-right:24px}}
+:root{--bg:#f4f5f7;--card:#fff;--text:#172033;--muted:#697386;--line:#e4e7ec;--accent:#5b5ce2;--danger:#c43d4b}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;background:radial-gradient(circle at 15% 0%,rgba(124,58,237,.12),transparent 30%),var(--bg)}
+.hero{color:#fff;background:linear-gradient(135deg,#171b35,#29275f 55%,#4c3ca8);padding:calc(env(safe-area-inset-top) + 25px) 18px 24px;box-shadow:0 8px 30px rgba(23,27,53,.2)}
+.hero-inner,main{max-width:900px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#ffffff18;font-size:24px}
+h1{margin:0;font-size:27px;letter-spacing:-.5px}.tagline{margin:5px 0 17px;color:#ffffffb8;font-size:14px}
+.search-wrap{position:relative}.search{width:100%;padding:16px 48px 16px 17px;border:0;border-radius:17px;font-size:17px;outline:none;box-shadow:0 10px 28px #00000029}.clear{position:absolute;right:9px;top:8px;width:40px;height:40px;border:0;border-radius:12px;background:#eef0f5;color:#555;font-size:20px;display:none}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.control{border:1px solid #ffffff2e;background:#ffffff19;color:#fff;border-radius:999px;padding:8px 12px;font-size:13px}.control.active{background:#fff;color:#29275f}
+main{padding:15px 15px calc(40px + env(safe-area-inset-bottom))}.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.stats{display:flex;gap:8px;flex-wrap:wrap}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 11px;font-size:13px}.stat b{font-size:15px}
+.add{border:0;border-radius:13px;background:var(--accent);color:#fff;padding:11px 14px;font-weight:650;font-size:14px;box-shadow:0 7px 16px #5b5ce233}
+.list{display:grid;grid-template-columns:1fr;gap:10px}.card{background:#ffffffdf;border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:0 8px 25px #1118270b}.title{font-size:17px;font-weight:700;line-height:1.35;padding-right:4px}.author{margin-top:6px;color:var(--muted);font-size:14px}.meta{margin-top:9px;color:#8b93a1;font-size:12px}.actions{display:flex;gap:7px;margin-top:12px}.small{border:1px solid var(--line);background:#f7f7f9;border-radius:10px;padding:7px 10px;font-size:12px}.delete{color:var(--danger)}
+mark{background:#fff0a8;border-radius:4px;padding:0 2px}.empty{text-align:center;padding:55px 20px;color:var(--muted)}footer{text-align:center;color:#9aa1ad;font-size:12px;padding:20px 5px}
+.overlay{position:fixed;inset:0;background:#11182766;display:none;align-items:flex-end;z-index:50}.overlay.show{display:flex}.sheet{width:100%;max-height:90vh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:22px 18px calc(25px + env(safe-area-inset-bottom));box-shadow:0 -15px 40px #0003}.sheet-inner{max-width:650px;margin:auto}.sheet h2{margin:0 0 18px;font-size:21px}.field{margin:13px 0}.field label{display:block;font-size:13px;font-weight:650;margin-bottom:6px}.field input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;font-size:16px;outline:none}.form-actions{display:flex;gap:9px;margin-top:18px}.form-actions button{flex:1;padding:13px;border-radius:12px;font-size:15px;font-weight:650}.cancel{border:1px solid var(--line);background:#f7f7f9}.save{border:0;background:var(--accent);color:#fff}
+.notice{display:none;background:#fff7d6;border:1px solid #f1df8c;color:#66551a;padding:10px 12px;border-radius:12px;font-size:12px;margin-bottom:12px}
+@media(min-width:680px){.list{grid-template-columns:1fr 1fr}.overlay{align-items:center}.sheet{max-width:620px;border-radius:22px;margin:20px}}
 </style>
 </head>
 <body>
-<section class="hero">
-  <div class="hero-inner">
-    <div class="brand">
-      <div class="bookmark">📚</div>
-      <div><h1>My Book Collection</h1><div class="tagline">Know what you own before you buy.</div></div>
-    </div>
-    <div class="search-wrap">
-      <input id="search" class="search" type="search" placeholder="Search title or author…" autocomplete="off" autocapitalize="none" spellcheck="false">
-      <button id="clear" class="clear" aria-label="Clear search">×</button>
-    </div>
-    <div class="controls">
-      <button class="control active" data-field="all">All</button>
-      <button class="control" data-field="title">Title</button>
-      <button class="control" data-field="author">Author</button>
-      <button class="control" id="regexBtn">Regex</button>
-    </div>
-    <div id="regexInfo" class="regex-info">Regex mode: e.g. <b>Stephen.*King</b> or <b>^The.*</b></div>
-  </div>
-</section>
-
+<section class="hero"><div class="hero-inner">
+<div class="brand"><div class="logo">📚</div><div><h1>My Book Collection</h1><div class="tagline">Know what you own before you buy.</div></div></div>
+<div class="search-wrap"><input id="search" class="search" type="search" placeholder="Search title or author…" autocomplete="off" autocapitalize="none" spellcheck="false"><button id="clear" class="clear">×</button></div>
+<div class="controls"><button class="control active" data-field="all">All</button><button class="control" data-field="title">Title</button><button class="control" data-field="author">Author</button><button class="control" id="regexBtn">Regex</button></div>
+</div></section>
 <main>
-  <div class="stats">
-    <div class="stat"><b id="count">0</b> books</div>
-    <div class="stat" id="status">Your collection</div>
-  </div>
-  <section id="list" class="list"></section>
-  <footer>186-book personal collection • Search stays on this device/browser.</footer>
+<div class="topbar"><div class="stats"><div class="stat"><b id="count">0</b> books</div><div class="stat" id="status">Your collection</div></div><button class="add" id="addBtn">＋ Add book</button></div>
+<div id="notice" class="notice"></div>
+<section id="list" class="list"></section>
+<footer>Your changes are saved locally on this device/browser. Use Backup to protect your collection.</footer>
 </main>
 
+<div id="overlay" class="overlay"><div class="sheet"><div class="sheet-inner">
+<h2 id="formTitle">Add book</h2>
+<div class="field"><label>Book title *</label><input id="bookTitle" placeholder="e.g. The Shining"></div>
+<div class="field"><label>Author *</label><input id="bookAuthor" placeholder="e.g. Stephen King"></div>
+<div class="field"><label>ISBN <span style="font-weight:400;color:#8b93a1">(optional)</span></label><input id="bookIsbn" inputmode="numeric" placeholder="ISBN-10 or ISBN-13"></div>
+<div class="form-actions"><button class="cancel" id="cancelBtn">Cancel</button><button class="save" id="saveBtn">Save book</button></div>
+</div></div></div>
+
 <script>
-const BOOKS = [{"sno":92,"author":"Agatha Christie","title":"The Mystery of the Blue Train"},{"sno":84,"author":"Alex Michaelides","title":"The Fury"},{"sno":148,"author":"Alex Michaelides","title":"The Silent Patient"},{"sno":109,"author":"Amish Tripathi","title":"Suhaldev : The King Who Saved India"},{"sno":110,"author":"Amish Tripathi","title":"Ramachandra Series 1: Scion of Ikshavaku"},{"sno":111,"author":"Amish Tripathi","title":"Ramachandra Series 2: Sita - Warrior of Mithila"},{"sno":112,"author":"Amish Tripathi","title":"Ramachandra Series 3: Raavan - Enemy of Aryavart"},{"sno":57,"author":"Amor Towles","title":"The Lincoln Highway"},{"sno":113,"author":"Anand Neelakantan","title":"The Rise of Shivagami"},{"sno":16,"author":"Andrew Hosken","title":"Empire of Fear"},{"sno":19,"author":"Anurag Pathak","title":"Twelfth Fail"},{"sno":63,"author":"Arthur Conan Doyle","title":"The Memoirs of Sherlock Holmes"},{"sno":64,"author":"Arthur Conan Doyle","title":"The Adventures of Sherlock Holmes"},{"sno":127,"author":"Arthur Golden","title":"Memoirs of a Geisha"},{"sno":60,"author":"Arundhati Roy","title":"The God of Small Things"},{"sno":8,"author":"Bhagat Singh","title":"Why I am An Atheist"},{"sno":137,"author":"Bhishma Sahani","title":"Tamas"},{"sno":24,"author":"Bipin Chandra","title":"India Since Independence"},{"sno":55,"author":"C.S.Lewis","title":"Narnia (The Magician's Nephew + The Lion, the Witch and the Wardrobe + The Horse and his boy)"},{"sno":128,"author":"Carl Sagan","title":"Cosmos"},{"sno":153,"author":"Cathy Kelly","title":"It Started with Paris"},{"sno":143,"author":"Charles Dickens","title":"Oliver Twist"},{"sno":95,"author":"Chris Bradford","title":"The Ring of Wind"},{"sno":96,"author":"Chris Bradford","title":"The Ring of Water"},{"sno":97,"author":"Chris Bradford","title":"The Ring of Earth"},{"sno":98,"author":"Chris Bradford","title":"The Ring of Sky"},{"sno":2,"author":"Chris Miller","title":"Chip War"},{"sno":83,"author":"Chris Pavone","title":"The Paris Diversion"},{"sno":105,"author":"Christopher Paolini","title":"Inheritance"},{"sno":106,"author":"Christopher Paolini","title":"Brisinger"},{"sno":107,"author":"Christopher Paolini","title":"Eldest"},{"sno":93,"author":"Christopher Radmann","title":"The Crack"},{"sno":51,"author":"Claire Douglas","title":"The Couple at No. 9"},{"sno":85,"author":"Claire Douglas","title":"The Girls Who Disappeared"},{"sno":54,"author":"Colleen Hoover","title":"Verity"},{"sno":46,"author":"Cormac McCarthy","title":"No Country For Old Men"},{"sno":102,"author":"Dan Brown","title":"The Secret of Secrets"},{"sno":151,"author":"David Baldacci","title":"Long Road to Mercy"},{"sno":178,"author":"David Baldacci","title":"King and Maxwell"},{"sno":179,"author":"David Baldacci","title":"True Blue"},{"sno":15,"author":"Diksha Dwivedi","title":"Letters from Kargil"},{"sno":149,"author":"Divyaroop Bhatnagar","title":"The Mussorie Murders"},{"sno":126,"author":"Douglas Adams","title":"The Ultimate Hitchhiker's Guide to The Galaxy"},{"sno":7,"author":"Dr. Shiv Sarin","title":"Own Your Body"},{"sno":172,"author":"Enid Blyton","title":"Six Cousins Again"},{"sno":158,"author":"Frank Herbert","title":"Dune"},{"sno":47,"author":"Franz Kafka","title":"Metamorphosis"},{"sno":41,"author":"Frederick Forsyth","title":"The Dogs of War"},{"sno":42,"author":"Frederick Forsyth","title":"The Cobra"},{"sno":43,"author":"Frederick Forsyth","title":"Avenger"},{"sno":44,"author":"Frederick Forsyth","title":"The Deceiver"},{"sno":45,"author":"Frederick Forsyth","title":"The Kill List"},{"sno":48,"author":"Frederick Forsyth","title":"The Fox"},{"sno":53,"author":"Frederick Forsyth","title":"Revenge of Odessa"},{"sno":147,"author":"Fredrik Backman","title":"Anxious People"},{"sno":10,"author":"Gabrielle Zevin","title":"Tomorrow Tomorrow and Tomorrow"},{"sno":136,"author":"Geetanjali Shree","title":"Tomb of Sand"},{"sno":71,"author":"General M.M.Narvane","title":"The Cantonment Conspiracy"},{"sno":91,"author":"General V.P.Malik","title":"Kargil From Surprise to Victory"},{"sno":70,"author":"George Orwell","title":"1984"},{"sno":157,"author":"George R.R.Martin","title":"Part1 - Game of Thrones"},{"sno":82,"author":"George R.R.Martin","title":"Part2 - A Clash of Kings"},{"sno":170,"author":"George R.R.Martin","title":"Part3.1 - A Storm of Swords - Steel and Snow"},{"sno":171,"author":"George R.R.Martin","title":"Part3.2 - A Storm of Swords - Blood and Gold"},{"sno":81,"author":"George R.R.Martin","title":"Part4 - A Feast of Crows"},{"sno":168,"author":"George R.R.Martin","title":"Part5.1 - A Dance with Dragons - Dreams and Dust"},{"sno":169,"author":"George R.R.Martin","title":"Part5.2 - A Dance with Dragons - After The Feast"},{"sno":69,"author":"Gillian Flynn","title":"Gone Girl"},{"sno":59,"author":"Hamish Morjaria","title":"The Curse of Muziris"},{"sno":114,"author":"Harlen Coben","title":"Stay Close"},{"sno":115,"author":"Harlen Coben","title":"Live Wire"},{"sno":183,"author":"Harper Lee","title":"To Kill a Mocking Bird"},{"sno":14,"author":"Haruki Murukami","title":"Kafka of The Shore"},{"sno":1,"author":"Hassan Abbas","title":"Pakistan's Nuclear Bomb"},{"sno":182,"author":"Heather Morris","title":"The Tattooist of Auschwitz"},{"sno":145,"author":"Holly Jackson","title":"Five Survive"},{"sno":155,"author":"Holly Jackson","title":"A Good Girl's Guide to Murder"},{"sno":146,"author":"Issac Newton","title":"The Principia"},{"sno":160,"author":"J.K.Rowling","title":"Order of Phoenix"},{"sno":161,"author":"J.K.Rowling","title":"Half Blood Prince"},{"sno":162,"author":"J.K.Rowling","title":"Deathly Hallows"},{"sno":22,"author":"James Fenimore Cooper","title":"The Last of The Mohicans"},{"sno":176,"author":"James Patterson","title":"Kill or be Killed"},{"sno":177,"author":"James Patterson","title":"Unsolved"},{"sno":117,"author":"Jeffery Archer","title":"Best Kept Secrets"},{"sno":118,"author":"Jeffery Archer","title":"Be Careful What you Wish For"},{"sno":119,"author":"Jeffery Archer","title":"Mightier Than The Sword"},{"sno":120,"author":"Jeffery Archer","title":"Cometh The Hour"},{"sno":121,"author":"Jeffery Archer","title":"Heads You Win"},{"sno":159,"author":"Jeffery Archer","title":"The Eleventh Commandment"},{"sno":49,"author":"Jo Nesbø","title":"Midnight Sun"},{"sno":68,"author":"Jo Nesbø","title":"Nemesis"},{"sno":72,"author":"Jo Nesbø","title":"The Leopard"},{"sno":73,"author":"Jo Nesbø","title":"The Devil's Star"},{"sno":74,"author":"Jo Nesbø","title":"The Redeemer"},{"sno":75,"author":"Jo Nesbø","title":"The Redbreast"},{"sno":76,"author":"Jo Nesbø","title":"Phantom"},{"sno":77,"author":"Jo Nesbø","title":"The Son"},{"sno":78,"author":"Jo Nesbø","title":"The Snowman"},{"sno":79,"author":"Jo Nesbø","title":"The Thirst"},{"sno":80,"author":"Jo Nesbø","title":"The Kingdom"},{"sno":3,"author":"Jui Karkare Navare","title":"Hemant Karkare"},{"sno":104,"author":"Julia Williams","title":"A Merry Little Christmas"},{"sno":65,"author":"Jussi Adler-Olsen","title":"Mercy"},{"sno":61,"author":"Keigo Higashino","title":"Salvation of Saint"},{"sno":103,"author":"Keigo Higashino","title":"The Devotion of Suspect X"},{"sno":156,"author":"Khaled Hosseini","title":"And the Mountains Echoed"},{"sno":18,"author":"Lord Charnwood","title":"Abraham Lincoln A Complete Biography"},{"sno":23,"author":"Mahatma Gandhi","title":"My Experiments with Truth"},{"sno":139,"author":"Manto","title":"25 Sarvasrestha Kahaniyan"},{"sno":140,"author":"Manto","title":"21 Sarvasrestha Kahaniyan"},{"sno":12,"author":"Marc Bennetts","title":"Kicking The Kremlin"},{"sno":184,"author":"Mario Puzo","title":"The Godfather"},{"sno":185,"author":"Mario Puzo","title":"The Family"},{"sno":154,"author":"Marjan Kamali","title":"The Stationary Shop of Tehran"},{"sno":165,"author":"Mark Twain","title":"The Adventures of Tom Sawyer"},{"sno":166,"author":"Mark Twain","title":"The Adventures of Huckleberry Finn"},{"sno":52,"author":"Markus Zusak","title":"The Book Thief"},{"sno":152,"author":"Maureen Lee","title":"Violet's Children"},{"sno":167,"author":"Michael Baigent","title":"The Messianic Legacy"},{"sno":181,"author":"Michael Bar - zahor","title":"Mossad"},{"sno":144,"author":"Mitch Bloom","title":"Tuesdays with Morrie"},{"sno":163,"author":"Munshi Premchand","title":"Premchand Sampurna Kahaniyan 1"},{"sno":164,"author":"Munshi Premchand","title":"Premchand Sampurna Kahaniyan 2"},{"sno":9,"author":"Nick Holt","title":"The Mammoth Book of World Cup"},{"sno":150,"author":"Nita Prose","title":"The Maid"},{"sno":180,"author":"Paula Hawkins","title":"The Girl on the Train"},{"sno":6,"author":"Peter Wohllben","title":"The Hidden Life of Trees"},{"sno":108,"author":"Philip Pullman","title":"The Amber Spyglass"},{"sno":123,"author":"Philip Pullman","title":"The Golden Compass"},{"sno":124,"author":"Philip Pullman","title":"The Subtle Knife"},{"sno":142,"author":"R.K.Narayan","title":"Swami And Friends"},{"sno":25,"author":"Ramachandra Guha","title":"India After Gandhi"},{"sno":26,"author":"Ramachandra Guha","title":"Makers of Modern India"},{"sno":100,"author":"Rebecca Yarros","title":"Fourth Wing"},{"sno":101,"author":"Rebecca Yarros","title":"Iron Flame"},{"sno":122,"author":"Richa S. Mukherjee","title":"The Curse of Kuldhara"},{"sno":86,"author":"Richard Osman","title":"The Thursday Murder Club"},{"sno":87,"author":"Richard Osman","title":"The Man Who Died Twice"},{"sno":88,"author":"Richard Osman","title":"The Bullet That Missed"},{"sno":89,"author":"Richard Osman","title":"The Last Devil to Die"},{"sno":94,"author":"Richmal Crompton","title":"William and The Moon Rocket"},{"sno":116,"author":"Robert Cook","title":"Genesis"},{"sno":141,"author":"Robert Greene","title":"The 48 Laws of Power"},{"sno":134,"author":"Robin Cook","title":"Viral"},{"sno":13,"author":"Sagarika Ghosh","title":"Why I am a Liberal"},{"sno":125,"author":"Salman Rushdie","title":"Midnight's Children"},{"sno":66,"author":"Satyajit Ray","title":"Ghost, Supernatural and Tales of the Uncanny"},{"sno":129,"author":"Satyajit Ray","title":"The Complete Adventure of Feluda 1"},{"sno":130,"author":"Satyajit Ray","title":"The Complete Adventure of Feluda 2"},{"sno":17,"author":"Shiv Aroor & Rahul Singh","title":"India's Most Fearless 3"},{"sno":186,"author":"Sidney Sheldon","title":"Tell Me Your Dreams"},{"sno":90,"author":"Solomon Northup","title":"12 Years a Slave"},{"sno":21,"author":"Stephen Hawking","title":"A Brief History of Time"},{"sno":27,"author":"Stephen King","title":"Fairy Tale"},{"sno":28,"author":"Stephen King","title":"Never Flinch"},{"sno":29,"author":"Stephen King","title":"The Shining"},{"sno":30,"author":"Stephen King","title":"11.22.63"},{"sno":31,"author":"Stephen King","title":"The Stand"},{"sno":32,"author":"Stephen King","title":"IT"},{"sno":33,"author":"Stephen King","title":"End of Watch"},{"sno":34,"author":"Stephen King","title":"Pet Sematary"},{"sno":35,"author":"Stephen King","title":"Holly"},{"sno":36,"author":"Stephen King","title":"Finders Keepers"},{"sno":37,"author":"Stephen King","title":"Dark Tower Series 1: The Gunslinger"},{"sno":38,"author":"Stephen King","title":"Dark Tower Series 2: The Drawing of The Three"},{"sno":39,"author":"Stephen King","title":"Dark Tower Series 6: Song of Susannah"},{"sno":40,"author":"Stephen King","title":"Insomnia"},{"sno":99,"author":"Stephen King","title":"Doctor Sleep"},{"sno":131,"author":"Stephen King","title":"Dolores Claiborne"},{"sno":173,"author":"Stieg Larsson","title":"The Girl with Dragon Tattoo"},{"sno":174,"author":"Stieg Larsson","title":"The Girl Who Played with Fire"},{"sno":175,"author":"Stieg Larsson","title":"The Girl Who Kicked the Hornets' Nest"},{"sno":56,"author":"Thomas Harris","title":"The Silence of The Lambs"},{"sno":58,"author":"Thomas Harris","title":"Hannibal Rising"},{"sno":62,"author":"Thomas Harris","title":"Hannibal"},{"sno":50,"author":"Tom Clancy","title":"Net Force"},{"sno":138,"author":"Utkarsh Agnihotri","title":"Main Bandishon ko Tod ke Aage Nikal Gaya"},{"sno":11,"author":"Walter Lewin","title":"For The Love of Physics"},{"sno":132,"author":"William Golding","title":"Lord of the Flies"},{"sno":133,"author":"Wilson Rawles","title":"Where the Red Fern Grows"},{"sno":4,"author":"","title":"Ambedkar : An Overview"},{"sno":5,"author":"","title":"Surely You're Joking Mr. Feynman!"},{"sno":20,"author":"","title":"World's Greatest Speeches"},{"sno":67,"author":"","title":"Greatest Works of Edgar Allan Poe"},{"sno":135,"author":"","title":"World's Greatest Short Stories"}];
+const INITIAL_BOOKS=[{"id":92,"author":"Agatha Christie","title":"The Mystery of the Blue Train","isbn":""},{"id":84,"author":"Alex Michaelides","title":"The Fury","isbn":""},{"id":148,"author":"Alex Michaelides","title":"The Silent Patient","isbn":""},{"id":109,"author":"Amish Tripathi","title":"Suhaldev : The King Who Saved India","isbn":""},{"id":110,"author":"Amish Tripathi","title":"Ramachandra Series 1: Scion of Ikshavaku","isbn":""},{"id":111,"author":"Amish Tripathi","title":"Ramachandra Series 2: Sita - Warrior of Mithila","isbn":""},{"id":112,"author":"Amish Tripathi","title":"Ramachandra Series 3: Raavan - Enemy of Aryavart","isbn":""},{"id":57,"author":"Amor Towles","title":"The Lincoln Highway","isbn":""},{"id":113,"author":"Anand Neelakantan","title":"The Rise of Shivagami","isbn":""},{"id":16,"author":"Andrew Hosken","title":"Empire of Fear","isbn":""},{"id":19,"author":"Anurag Pathak","title":"Twelfth Fail","isbn":""},{"id":63,"author":"Arthur Conan Doyle","title":"The Memoirs of Sherlock Holmes","isbn":""},{"id":64,"author":"Arthur Conan Doyle","title":"The Adventures of Sherlock Holmes","isbn":""},{"id":127,"author":"Arthur Golden","title":"Memoirs of a Geisha","isbn":""},{"id":60,"author":"Arundhati Roy","title":"The God of Small Things","isbn":""},{"id":8,"author":"Bhagat Singh","title":"Why I am An Atheist","isbn":""},{"id":137,"author":"Bhishma Sahani","title":"Tamas","isbn":""},{"id":24,"author":"Bipin Chandra","title":"India Since Independence","isbn":""},{"id":55,"author":"C.S.Lewis","title":"Narnia (The Magician's Nephew + The Lion, the Witch and the Wardrobe + The Horse and his boy)","isbn":""},{"id":128,"author":"Carl Sagan","title":"Cosmos","isbn":""},{"id":153,"author":"Cathy Kelly","title":"It Started with Paris","isbn":""},{"id":143,"author":"Charles Dickens","title":"Oliver Twist","isbn":""},{"id":95,"author":"Chris Bradford","title":"The Ring of Wind","isbn":""},{"id":96,"author":"Chris Bradford","title":"The Ring of Water","isbn":""},{"id":97,"author":"Chris Bradford","title":"The Ring of Earth","isbn":""},{"id":98,"author":"Chris Bradford","title":"The Ring of Sky","isbn":""},{"id":2,"author":"Chris Miller","title":"Chip War","isbn":""},{"id":83,"author":"Chris Pavone","title":"The Paris Diversion","isbn":""},{"id":105,"author":"Christopher Paolini","title":"Inheritance","isbn":""},{"id":106,"author":"Christopher Paolini","title":"Brisinger","isbn":""},{"id":107,"author":"Christopher Paolini","title":"Eldest","isbn":""},{"id":93,"author":"Christopher Radmann","title":"The Crack","isbn":""},{"id":51,"author":"Claire Douglas","title":"The Couple at No. 9","isbn":""},{"id":85,"author":"Claire Douglas","title":"The Girls Who Disappeared","isbn":""},{"id":54,"author":"Colleen Hoover","title":"Verity","isbn":""},{"id":46,"author":"Cormac McCarthy","title":"No Country For Old Men","isbn":""},{"id":102,"author":"Dan Brown","title":"The Secret of Secrets","isbn":""},{"id":151,"author":"David Baldacci","title":"Long Road to Mercy","isbn":""},{"id":178,"author":"David Baldacci","title":"King and Maxwell","isbn":""},{"id":179,"author":"David Baldacci","title":"True Blue","isbn":""},{"id":15,"author":"Diksha Dwivedi","title":"Letters from Kargil","isbn":""},{"id":149,"author":"Divyaroop Bhatnagar","title":"The Mussorie Murders","isbn":""},{"id":126,"author":"Douglas Adams","title":"The Ultimate Hitchhiker's Guide to The Galaxy","isbn":""},{"id":7,"author":"Dr. Shiv Sarin","title":"Own Your Body","isbn":""},{"id":172,"author":"Enid Blyton","title":"Six Cousins Again","isbn":""},{"id":158,"author":"Frank Herbert","title":"Dune","isbn":""},{"id":47,"author":"Franz Kafka","title":"Metamorphosis","isbn":""},{"id":41,"author":"Frederick Forsyth","title":"The Dogs of War","isbn":""},{"id":42,"author":"Frederick Forsyth","title":"The Cobra","isbn":""},{"id":43,"author":"Frederick Forsyth","title":"Avenger","isbn":""},{"id":44,"author":"Frederick Forsyth","title":"The Deceiver","isbn":""},{"id":45,"author":"Frederick Forsyth","title":"The Kill List","isbn":""},{"id":48,"author":"Frederick Forsyth","title":"The Fox","isbn":""},{"id":53,"author":"Frederick Forsyth","title":"Revenge of Odessa","isbn":""},{"id":147,"author":"Fredrik Backman","title":"Anxious People","isbn":""},{"id":10,"author":"Gabrielle Zevin","title":"Tomorrow Tomorrow and Tomorrow","isbn":""},{"id":136,"author":"Geetanjali Shree","title":"Tomb of Sand","isbn":""},{"id":71,"author":"General M.M.Narvane","title":"The Cantonment Conspiracy","isbn":""},{"id":91,"author":"General V.P.Malik","title":"Kargil From Surprise to Victory","isbn":""},{"id":70,"author":"George Orwell","title":"1984","isbn":""},{"id":157,"author":"George R.R.Martin","title":"Part1 - Game of Thrones","isbn":""},{"id":82,"author":"George R.R.Martin","title":"Part2 - A Clash of Kings","isbn":""},{"id":170,"author":"George R.R.Martin","title":"Part3.1 - A Storm of Swords - Steel and Snow","isbn":""},{"id":171,"author":"George R.R.Martin","title":"Part3.2 - A Storm of Swords - Blood and Gold","isbn":""},{"id":81,"author":"George R.R.Martin","title":"Part4 - A Feast of Crows","isbn":""},{"id":168,"author":"George R.R.Martin","title":"Part5.1 - A Dance with Dragons - Dreams and Dust","isbn":""},{"id":169,"author":"George R.R.Martin","title":"Part5.2 - A Dance with Dragons - After The Feast","isbn":""},{"id":69,"author":"Gillian Flynn","title":"Gone Girl","isbn":""},{"id":59,"author":"Hamish Morjaria","title":"The Curse of Muziris","isbn":""},{"id":114,"author":"Harlen Coben","title":"Stay Close","isbn":""},{"id":115,"author":"Harlen Coben","title":"Live Wire","isbn":""},{"id":183,"author":"Harper Lee","title":"To Kill a Mocking Bird","isbn":""},{"id":14,"author":"Haruki Murukami","title":"Kafka of The Shore","isbn":""},{"id":1,"author":"Hassan Abbas","title":"Pakistan's Nuclear Bomb","isbn":""},{"id":182,"author":"Heather Morris","title":"The Tattooist of Auschwitz","isbn":""},{"id":145,"author":"Holly Jackson","title":"Five Survive","isbn":""},{"id":155,"author":"Holly Jackson","title":"A Good Girl's Guide to Murder","isbn":""},{"id":146,"author":"Issac Newton","title":"The Principia","isbn":""},{"id":160,"author":"J.K.Rowling","title":"Order of Phoenix","isbn":""},{"id":161,"author":"J.K.Rowling","title":"Half Blood Prince","isbn":""},{"id":162,"author":"J.K.Rowling","title":"Deathly Hallows","isbn":""},{"id":22,"author":"James Fenimore Cooper","title":"The Last of The Mohicans","isbn":""},{"id":176,"author":"James Patterson","title":"Kill or be Killed","isbn":""},{"id":177,"author":"James Patterson","title":"Unsolved","isbn":""},{"id":117,"author":"Jeffery Archer","title":"Best Kept Secrets","isbn":""},{"id":118,"author":"Jeffery Archer","title":"Be Careful What you Wish For","isbn":""},{"id":119,"author":"Jeffery Archer","title":"Mightier Than The Sword","isbn":""},{"id":120,"author":"Jeffery Archer","title":"Cometh The Hour","isbn":""},{"id":121,"author":"Jeffery Archer","title":"Heads You Win","isbn":""},{"id":159,"author":"Jeffery Archer","title":"The Eleventh Commandment","isbn":""},{"id":49,"author":"Jo Nesbø","title":"Midnight Sun","isbn":""},{"id":68,"author":"Jo Nesbø","title":"Nemesis","isbn":""},{"id":72,"author":"Jo Nesbø","title":"The Leopard","isbn":""},{"id":73,"author":"Jo Nesbø","title":"The Devil's Star","isbn":""},{"id":74,"author":"Jo Nesbø","title":"The Redeemer","isbn":""},{"id":75,"author":"Jo Nesbø","title":"The Redbreast","isbn":""},{"id":76,"author":"Jo Nesbø","title":"Phantom","isbn":""},{"id":77,"author":"Jo Nesbø","title":"The Son","isbn":""},{"id":78,"author":"Jo Nesbø","title":"The Snowman","isbn":""},{"id":79,"author":"Jo Nesbø","title":"The Thirst","isbn":""},{"id":80,"author":"Jo Nesbø","title":"The Kingdom","isbn":""},{"id":3,"author":"Jui Karkare Navare","title":"Hemant Karkare","isbn":""},{"id":104,"author":"Julia Williams","title":"A Merry Little Christmas","isbn":""},{"id":65,"author":"Jussi Adler-Olsen","title":"Mercy","isbn":""},{"id":61,"author":"Keigo Higashino","title":"Salvation of Saint","isbn":""},{"id":103,"author":"Keigo Higashino","title":"The Devotion of Suspect X","isbn":""},{"id":156,"author":"Khaled Hosseini","title":"And the Mountains Echoed","isbn":""},{"id":18,"author":"Lord Charnwood","title":"Abraham Lincoln A Complete Biography","isbn":""},{"id":23,"author":"Mahatma Gandhi","title":"My Experiments with Truth","isbn":""},{"id":139,"author":"Manto","title":"25 Sarvasrestha Kahaniyan","isbn":""},{"id":140,"author":"Manto","title":"21 Sarvasrestha Kahaniyan","isbn":""},{"id":12,"author":"Marc Bennetts","title":"Kicking The Kremlin","isbn":""},{"id":184,"author":"Mario Puzo","title":"The Godfather","isbn":""},{"id":185,"author":"Mario Puzo","title":"The Family","isbn":""},{"id":154,"author":"Marjan Kamali","title":"The Stationary Shop of Tehran","isbn":""},{"id":165,"author":"Mark Twain","title":"The Adventures of Tom Sawyer","isbn":""},{"id":166,"author":"Mark Twain","title":"The Adventures of Huckleberry Finn","isbn":""},{"id":52,"author":"Markus Zusak","title":"The Book Thief","isbn":""},{"id":152,"author":"Maureen Lee","title":"Violet's Children","isbn":""},{"id":167,"author":"Michael Baigent","title":"The Messianic Legacy","isbn":""},{"id":181,"author":"Michael Bar - zahor","title":"Mossad","isbn":""},{"id":144,"author":"Mitch Bloom","title":"Tuesdays with Morrie","isbn":""},{"id":163,"author":"Munshi Premchand","title":"Premchand Sampurna Kahaniyan 1","isbn":""},{"id":164,"author":"Munshi Premchand","title":"Premchand Sampurna Kahaniyan 2","isbn":""},{"id":9,"author":"Nick Holt","title":"The Mammoth Book of World Cup","isbn":""},{"id":150,"author":"Nita Prose","title":"The Maid","isbn":""},{"id":180,"author":"Paula Hawkins","title":"The Girl on the Train","isbn":""},{"id":6,"author":"Peter Wohllben","title":"The Hidden Life of Trees","isbn":""},{"id":108,"author":"Philip Pullman","title":"The Amber Spyglass","isbn":""},{"id":123,"author":"Philip Pullman","title":"The Golden Compass","isbn":""},{"id":124,"author":"Philip Pullman","title":"The Subtle Knife","isbn":""},{"id":142,"author":"R.K.Narayan","title":"Swami And Friends","isbn":""},{"id":25,"author":"Ramachandra Guha","title":"India After Gandhi","isbn":""},{"id":26,"author":"Ramachandra Guha","title":"Makers of Modern India","isbn":""},{"id":100,"author":"Rebecca Yarros","title":"Fourth Wing","isbn":""},{"id":101,"author":"Rebecca Yarros","title":"Iron Flame","isbn":""},{"id":122,"author":"Richa S. Mukherjee","title":"The Curse of Kuldhara","isbn":""},{"id":86,"author":"Richard Osman","title":"The Thursday Murder Club","isbn":""},{"id":87,"author":"Richard Osman","title":"The Man Who Died Twice","isbn":""},{"id":88,"author":"Richard Osman","title":"The Bullet That Missed","isbn":""},{"id":89,"author":"Richard Osman","title":"The Last Devil to Die","isbn":""},{"id":94,"author":"Richmal Crompton","title":"William and The Moon Rocket","isbn":""},{"id":116,"author":"Robert Cook","title":"Genesis","isbn":""},{"id":141,"author":"Robert Greene","title":"The 48 Laws of Power","isbn":""},{"id":134,"author":"Robin Cook","title":"Viral","isbn":""},{"id":13,"author":"Sagarika Ghosh","title":"Why I am a Liberal","isbn":""},{"id":125,"author":"Salman Rushdie","title":"Midnight's Children","isbn":""},{"id":66,"author":"Satyajit Ray","title":"Ghost, Supernatural and Tales of the Uncanny","isbn":""},{"id":129,"author":"Satyajit Ray","title":"The Complete Adventure of Feluda 1","isbn":""},{"id":130,"author":"Satyajit Ray","title":"The Complete Adventure of Feluda 2","isbn":""},{"id":17,"author":"Shiv Aroor & Rahul Singh","title":"India's Most Fearless 3","isbn":""},{"id":186,"author":"Sidney Sheldon","title":"Tell Me Your Dreams","isbn":""},{"id":90,"author":"Solomon Northup","title":"12 Years a Slave","isbn":""},{"id":21,"author":"Stephen Hawking","title":"A Brief History of Time","isbn":""},{"id":27,"author":"Stephen King","title":"Fairy Tale","isbn":""},{"id":28,"author":"Stephen King","title":"Never Flinch","isbn":""},{"id":29,"author":"Stephen King","title":"The Shining","isbn":""},{"id":30,"author":"Stephen King","title":"11.22.63","isbn":""},{"id":31,"author":"Stephen King","title":"The Stand","isbn":""},{"id":32,"author":"Stephen King","title":"IT","isbn":""},{"id":33,"author":"Stephen King","title":"End of Watch","isbn":""},{"id":34,"author":"Stephen King","title":"Pet Sematary","isbn":""},{"id":35,"author":"Stephen King","title":"Holly","isbn":""},{"id":36,"author":"Stephen King","title":"Finders Keepers","isbn":""},{"id":37,"author":"Stephen King","title":"Dark Tower Series 1: The Gunslinger","isbn":""},{"id":38,"author":"Stephen King","title":"Dark Tower Series 2: The Drawing of The Three","isbn":""},{"id":39,"author":"Stephen King","title":"Dark Tower Series 6: Song of Susannah","isbn":""},{"id":40,"author":"Stephen King","title":"Insomnia","isbn":""},{"id":99,"author":"Stephen King","title":"Doctor Sleep","isbn":""},{"id":131,"author":"Stephen King","title":"Dolores Claiborne","isbn":""},{"id":173,"author":"Stieg Larsson","title":"The Girl with Dragon Tattoo","isbn":""},{"id":174,"author":"Stieg Larsson","title":"The Girl Who Played with Fire","isbn":""},{"id":175,"author":"Stieg Larsson","title":"The Girl Who Kicked the Hornets' Nest","isbn":""},{"id":56,"author":"Thomas Harris","title":"The Silence of The Lambs","isbn":""},{"id":58,"author":"Thomas Harris","title":"Hannibal Rising","isbn":""},{"id":62,"author":"Thomas Harris","title":"Hannibal","isbn":""},{"id":50,"author":"Tom Clancy","title":"Net Force","isbn":""},{"id":138,"author":"Utkarsh Agnihotri","title":"Main Bandishon ko Tod ke Aage Nikal Gaya","isbn":""},{"id":11,"author":"Walter Lewin","title":"For The Love of Physics","isbn":""},{"id":132,"author":"William Golding","title":"Lord of the Flies","isbn":""},{"id":133,"author":"Wilson Rawles","title":"Where the Red Fern Grows","isbn":""},{"id":4,"author":"","title":"Ambedkar : An Overview","isbn":""},{"id":5,"author":"","title":"Surely You're Joking Mr. Feynman!","isbn":""},{"id":20,"author":"","title":"World's Greatest Speeches","isbn":""},{"id":67,"author":"","title":"Greatest Works of Edgar Allan Poe","isbn":""},{"id":135,"author":"","title":"World's Greatest Short Stories","isbn":""}];
+const STORAGE_KEY="myBookCollection.v3";
+let books=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null")||INITIAL_BOOKS;
+let field="all",regexMode=false,editingId=null;
 
-const norm = s => s.toLowerCase()
-  .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
-  .replace(/[^a-z0-9]+/g," ").trim();
+const $=id=>document.getElementById(id);
+const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-const escapeHtml = s => s.replace(/[&<>"']/g, c => ({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-}[c]));
-
-function highlight(text, query, regexMode){
-  const safe = escapeHtml(text);
-  if(!query) return safe;
-  try {
-    if(regexMode) {
-      const re = new RegExp(query, "gi");
-      return safe.replace(re, m => `<mark>${m}</mark>`);
-    }
-    const words = norm(query).split(/\s+/).filter(Boolean);
-    if(!words.length) return safe;
-    const escaped = words.map(x => x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"));
-    return safe.replace(new RegExp("\\b(" + escaped.join("|") + ")\\b","ig"), "<mark>$1</mark>");
-  } catch(e) { return safe; }
+function saveData(){localStorage.setItem(STORAGE_KEY,JSON.stringify(books));}
+function match(book,q){
+ if(!q)return true;
+ const target=field==="title"?book.title:field==="author"?book.author:book.title+" — "+book.author;
+ if(regexMode){try{return new RegExp(q,"i").test(target)}catch(e){return false}}
+ const t=norm(target), tokens=norm(q).split(/\s+/).filter(Boolean);
+ return tokens.every(x=>new RegExp("\\b"+x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b","i").test(t));
 }
-
-let field = "all";
-let regexMode = false;
-
-function matches(book, query){
-  if(!query) return true;
-  const target = field === "title" ? book.title : field === "author" ? book.author : `${book.title} — ${book.author}`;
-  if(regexMode){
-    try { return new RegExp(query, "i").test(target); }
-    catch(e) { return false; }
-  }
-  const q = norm(query);
-  if(!q) return true;
-  // Whole-word matching prevents "Stephen King" from matching "Stephen Hawking".
-  const tokens = q.split(/\s+/).filter(Boolean);
-  const targetNorm = norm(target);
-  return tokens.every(t => new RegExp("\\b" + t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&") + "\\b","i").test(targetNorm));
-}
+function hi(text,q){if(!q)return esc(text);try{
+ if(regexMode)return esc(text).replace(new RegExp(q,"gi"),m=>"<mark>"+m+"</mark>");
+ const ts=norm(q).split(/\s+/).filter(Boolean).map(x=>x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"));
+ return esc(text).replace(new RegExp("\\b("+ts.join("|")+")\\b","ig"),m=>"<mark>"+m+"</mark>");
+}catch(e){return esc(text)}}
 
 function render(){
-  const query = document.getElementById("search").value.trim();
-  const results = BOOKS.filter(b => matches(b, query));
-  document.getElementById("count").textContent = results.length;
-  document.getElementById("status").textContent = query ? (regexMode ? "Regex results" : "Search results") : "Your collection";
-  document.getElementById("clear").style.display = query ? "block" : "none";
-
-  const list = document.getElementById("list");
-  if(!results.length){
-    list.innerHTML = `<div class="empty" style="grid-column:1/-1">
-      <div class="empty-icon">🔎</div>
-      <strong>No matching book found</strong>
-      <p class="hint">${regexMode ? "Check your regular expression." : "Try fewer words, or switch to Regex mode for advanced searches."}</p>
-    </div>`;
-    return;
-  }
-  list.innerHTML = results.map(b => `
-    <article class="card">
-      <span class="badge">#${b.sno}</span>
-      <div class="title">${highlight(b.title, query, regexMode)}</div>
-      <div class="author">${highlight(b.author, query, regexMode)}</div>
-    </article>
-  `).join("");
+ const q=$("search").value.trim(), results=books.filter(b=>match(b,q));
+ $("count").textContent=results.length; $("status").textContent=q?(regexMode?"Regex results":"Search results"):"Your collection";
+ $("clear").style.display=q?"block":"none";
+ if(!results.length){$("list").innerHTML='<div class="empty" style="grid-column:1/-1"><div style="font-size:40px">🔎</div><strong>No matching book found</strong><p>Try another search or add this book to your collection.</p></div>';return}
+ $("list").innerHTML=results.map(b=>`<article class="card"><div class="title">${hi(b.title,q)}</div><div class="author">${hi(b.author,q)}</div>${b.isbn?`<div class="meta">ISBN: ${esc(b.isbn)}</div>`:""}<div class="actions"><button class="small" onclick="editBook(${b.id})">✏️ Edit</button><button class="small delete" onclick="deleteBook(${b.id})">🗑️ Delete</button></div></article>`).join("");
 }
 
-document.getElementById("search").addEventListener("input", render);
-document.getElementById("clear").addEventListener("click", () => {
-  document.getElementById("search").value="";
-  render();
-  document.getElementById("search").focus();
-});
+function openForm(book=null){
+ editingId=book?book.id:null;$("formTitle").textContent=book?"Edit book":"Add book";
+ $("bookTitle").value=book?book.title:"";$("bookAuthor").value=book?book.author:"";$("bookIsbn").value=book?book.isbn||"":"";
+ $("overlay").classList.add("show");setTimeout(()=>$("bookTitle").focus(),100);
+}
+function closeForm(){$("overlay").classList.remove("show");editingId=null}
+function addBook(){openForm()}
+function editBook(id){const b=books.find(x=>x.id===id);if(b)openForm(b)}
+function deleteBook(id){
+ const b=books.find(x=>x.id===id);if(!b)return;
+ if(confirm(`Remove "${b.title}" from your collection?`)){books=books.filter(x=>x.id!==id);saveData();render()}
+}
+function submit(){
+ const title=$("bookTitle").value.trim(),author=$("bookAuthor").value.trim(),isbn=$("bookIsbn").value.trim();
+ if(!title||!author){alert("Please enter both the book title and author.");return}
+ if(editingId!==null){const b=books.find(x=>x.id===editingId);if(b){b.title=title;b.author=author;b.isbn=isbn}}
+ else {books.push({id:Date.now(),title,author,isbn})}
+ saveData();closeForm();render();
+}
 
-document.querySelectorAll("[data-field]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    field=btn.dataset.field;
-    document.querySelectorAll("[data-field]").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    render();
-  });
-});
-
-document.getElementById("regexBtn").addEventListener("click", () => {
-  regexMode=!regexMode;
-  document.getElementById("regexBtn").classList.toggle("active", regexMode);
-  document.getElementById("regexInfo").style.display=regexMode?"block":"none";
-  render();
-});
-
+$("search").addEventListener("input",render);$("clear").onclick=()=>{$("search").value="";render();$("search").focus()};
+$("addBtn").onclick=addBook;$("cancelBtn").onclick=closeForm;$("saveBtn").onclick=submit;
+$("overlay").addEventListener("click",e=>{if(e.target===$("overlay"))closeForm()});
+document.querySelectorAll("[data-field]").forEach(btn=>btn.onclick=()=>{field=btn.dataset.field;document.querySelectorAll("[data-field]").forEach(x=>x.classList.remove("active"));btn.classList.add("active");render()});
+$("regexBtn").onclick=()=>{regexMode=!regexMode;$("regexBtn").classList.toggle("active",regexMode);render()};
 render();
-</script>
-</body>
-</html>
+</script></body></html>

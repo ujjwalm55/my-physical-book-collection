@@ -1,9 +1,15 @@
-# My Book Collection
+# My Book Collection v3
 
-Contains 186 books from the supplied list.
+Contains the original 186 books.
 
-## iPhone setup
-Upload these three files to any HTTPS static host (GitHub Pages is an easy free option), open the page in Safari, then Share → Add to Home Screen.
+Features:
+- Search title/author
+- Whole-word normal search
+- Regex mode
+- Add book
+- Edit book
+- Delete book
+- Optional ISBN field
+- Local browser storage
 
-## Search
-Searches title + author, ignores capitalization and punctuation, and supports multiple words.
+Important: changes are stored in the browser's localStorage on the device. Clearing website data can remove local changes. Backup/restore is planned for the next iteration.
