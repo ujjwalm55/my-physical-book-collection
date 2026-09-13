@@ -1,15 +1,7 @@
-# My Book Collection v3
+# My Library V5
 
 Contains the original 186 books.
 
-Features:
-- Search title/author
-- Whole-word normal search
-- Regex mode
-- Add book
-- Edit book
-- Delete book
-- Optional ISBN field
-- Local browser storage
+Features: search, regex, title/author search, Add/Edit/Delete, Read/Reading/Unread, status filters, ISBN/series/genre/notes, JSON backup and restore.
 
-Important: changes are stored in the browser's localStorage on the device. Clearing website data can remove local changes. Backup/restore is planned for the next iteration.
+V5 automatically migrates existing V4 browser data when present. Backups are JSON files containing the library records.
